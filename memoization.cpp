@@ -5,7 +5,8 @@
 //  *If the state has not been computed, perform the computation as per normal and then store the comped value in the DP memo table and return it
 //In essence, top-down DP is just recursive backtracking with storage to quicken it up.
 //BOTTOM-DOWN DP:
-//  *Sorts subproblems by input size and solves them iteratively from smallest to largest.
+//  *Create a DP memo table with known values (base cases) initialized
+//  *Now, with the base-case cells in the DP table filled, determine the cells/states that can be filled next. Repeat until the DP table is complete
 
 //UVa 11450-Wedding Shopping
 //The abridged problem statement: Given different options for each garment (e.g. 3 shirt models, 2 belt models, 4 shoe models, . . . ) 
