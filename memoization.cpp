@@ -3,6 +3,7 @@
 //TOP-DOWN DP:
 //  *If a certain state has been computed before, simply return the value from the DP memo table
 //  *If the state has not been computed, perform the computation as per normal and then store the comped value in the DP memo table and return it
+//In essence, top-down DP is just recursive backtracking with storage to quicken it up.
 //BOTTOM-DOWN DP:
 //  *Sorts subproblems by input size and solves them iteratively from smallest to largest.
 
