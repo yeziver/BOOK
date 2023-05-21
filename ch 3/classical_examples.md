@@ -11,16 +11,20 @@ int main(void) {
   }
 ```
 
-### Max 2D Range Sum
-Given an nxn square matrix of integers A where each integer ranges from [-127...127], find a sub-matrix of A with the maximum sum.
-We can turn the n × n input matrix into an n × n cumulative sum matrix where A[i][j] no longer contains its own value, but the sum of all items within sub-matrix (0, 0) to (i, j).
-```
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
-      if (i > 0) A[i][j] += A[i - 1][j]; 
-      if (j > 0) A[i][j] += A[i][j - 1]; 
-      if (i > 0 && j > 0) A[i][j] -= A[i - 1][j - 1]; // avoid double count
-    }
-  }
-```
+### Knapsack (Subset Sum)
+Given n items, each with its own value Vi and weight Wi, and a maximum knapsack size S, compute the maximum value of the items that we can carry, if we can either ignore or take a particular item.
 
+Solution:
+  1. If the remaining weight is 0, we cannot take anything else
+  2. If the index is n, we have considered all items
+  3. If W[index] > remaining weight, we must ignore this item
+  4. If W[index] <= remaining weight, we can either ignore or take the item; we take the maximum of this; max(val(id+1, remW), V[id] + val(id+1, remW-W[id]))
+ 
+ 
+# Coin Change
+Given a target amount V cents and a list of denominations for n coins, we have coinValue[i] (in cents) for coin types i, what is the minimum number of coins that we must use to represent V ?
+
+Solution:
+  1. If the remaining amount of cents is 0, we need 0 coins to produce 0 cents
+  2. If the remaining amount of cents is less than zero, we can return a dummy value
+  3. If the value is valid, return the minimum of all possibilities; change(value - coinValue[i])
