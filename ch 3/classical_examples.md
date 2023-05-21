@@ -24,8 +24,3 @@ We can turn the n × n input matrix into an n × n cumulative sum matrix where A
   }
 ```
 
-### Longest Increasing Subsequence
-Given a sequence {A[0], A[1],..., A[n-1]}, determine its Longest Increasing Subse- quence (LIS)13. Note that these ‘subsequences’ are not necessarily contiguous.
-The recursive is formally written as;
-  1. LIS(0) = 1 //the base case
-  2. LIS(i) = max(LIS(j)+1) //one more than the previous best solution
