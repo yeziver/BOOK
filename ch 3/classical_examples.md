@@ -21,7 +21,7 @@ Solution:
   4. If W[index] <= remaining weight, we can either ignore or take the item; we take the maximum of this; max(val(id+1, remW), V[id] + val(id+1, remW-W[id]))
  
  
-# Coin Change
+### Coin Change
 Given a target amount V cents and a list of denominations for n coins, we have coinValue[i] (in cents) for coin types i, what is the minimum number of coins that we must use to represent V ?
 
 Solution:
