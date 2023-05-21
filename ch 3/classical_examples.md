@@ -10,3 +10,16 @@ int main(void) {
      if (sum < 0) sum = 0;
   }
 ```
+
+### Max 2D Range Sum
+Given an nxn square matrix of integers A where each integer ranges from [-127...127], find a sub-matrix of A with the maximum sum.
+```
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (i > 0) A[i][j] += A[i - 1][j]; 
+      if (j > 0) A[i][j] += A[i][j - 1]; 
+      if (i > 0 && j > 0) A[i][j] -= A[i - 1][j - 1]; // avoid double count
+    }
+  }
+```
+
