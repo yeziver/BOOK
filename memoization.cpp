@@ -17,7 +17,7 @@
 //followed by some information about the C garments. For the garment g ∈ [0..C-1], we will receive an integer 1 ≤ K ≤ 20 which indicates the 
 //number of different models there are for that garment g, followed by K integers indicating the price of each model ∈ [1..K] of that garment g.
 
-//ABRIDGED SOLUTION:
+//ABRIDGED TOP-DOWN SOLUTION:
 
 #include <iostream>
 using namespace std;
@@ -33,4 +33,33 @@ int shop(int money, int g) {
 		ans = max(ans, shop(money-price[g][model], g+1));
 	}
 	return memo[money][g] = ans;
+}
+
+//ABRIDGED BOTTOM-DOWN SOLUTION:
+
+#include <iostream>
+using namespace std;
+
+int main(void) {
+	int g, money, k, TC, M, C;
+	int price[25][25];
+	bool reachable[25][210];
+	
+	for (g = 1; g <= price[0][0]; g++) {
+		if (M - price[0][g] >= 0) {
+			reachable[0][M-price[0][g]] = true;
+		}
+	}
+	for (g = 1; g < C; g++) {
+		for (money = 0; money < M; money++) {
+			if (reachable[g-1][money]) {
+				for (k = 1; k <= price[g][0]; k++) {
+					if (money - price[g][k] >= 0) {
+						reachable[g][money - price[g][k]] = true;
+					}
+				}
+			}
+		}
+	}
+	for (money = 0; money <= M && !reachable[C-1][money]; money++);
 }
