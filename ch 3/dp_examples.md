@@ -28,3 +28,10 @@ Solution:
   1. If the remaining amount of cents is 0, we need 0 coins to produce 0 cents
   2. If the remaining amount of cents is less than zero, we can return a dummy value
   3. If the value is valid, return the minimum of all possibilities; change(value - coinValue[i])
+
+### How do you add?
+Given an integer n, how many ways can K non-negative integers less than or equal to n add up to n?
+
+Solution:
+  1. Base case: when K = 1. No matter what, there is one way to add exactly one number less than equal or n to get n: use n itself. 
+  2. The subproblem is (n - X, K-1). n-X is the remaining sum to be achieved, and K-1 is the amount of non-negative integers remaining to be added.
