@@ -1,3 +1,5 @@
+//this is the dp version i believe. or somewhat closer to dp than the original. idk im too lazy to check
+
 #include <iostream>
 using namespace std;
 
