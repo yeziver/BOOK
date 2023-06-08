@@ -4,3 +4,5 @@ BFS works in rounds, where the nodes discovered in the next round are one edge m
 ## IMPORTANT!!! 
 #### After we finish processing one node, we check to see if we can use it to improve any of the shortest paths for nodes that not yet done.
 So basically we loop through the nodes that the current node poits to, or the outgoing edges of said node. We check to see if the updated path using the current node is better than what we already have for that node.
+
+### When choosing a new node to process, it must be an unprocessed one with the least possible weight.
