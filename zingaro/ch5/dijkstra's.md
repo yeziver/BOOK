@@ -6,3 +6,8 @@ BFS works in rounds, where the nodes discovered in the next round are one edge m
 So basically we loop through the nodes that the current node poits to, or the outgoing edges of said node. We check to see if the updated path using the current node is better than what we already have for that node.
 
 ### When choosing a new node to process, it must be an unprocessed one with the least possible weight.
+
+
+## Time Optimizations
+  * As soon as the exit cell is set to done, we terminate the algorithm.
+  * Reverse all directions in the graph and call Dijkstra's once- with the exit cell as the starting cell!
